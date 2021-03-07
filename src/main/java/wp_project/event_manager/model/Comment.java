@@ -1,5 +1,7 @@
 package wp_project.event_manager.model;
 
+import org.apache.xpath.operations.Bool;
+
 import javax.persistence.*;
 import java.util.List;
 

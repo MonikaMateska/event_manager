@@ -1,6 +1,7 @@
 package wp_project.event_manager.model;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -8,10 +9,11 @@ public class Event {
     public Event() {
     }
 
-    public Event(String name, List<User> attendees, Location location, List<Comment> comments) {
+    public Event(String name, List<User> attendees, Location location, Date time, List<Comment> comments) {
         this.name = name;
         this.attendees = attendees;
         this.location = location;
+        this.time = time;
         this.comments = comments;
     }
 
@@ -27,7 +29,15 @@ public class Event {
     @ManyToOne
     private Location location;
 
-//    private Date time;
+    private Date time;
+
+    public Date getTime() {
+        return time;
+    }
+
+    public void setTime(Date time) {
+        this.time = time;
+    }
 
     @OneToMany
     private List<Comment> comments;
