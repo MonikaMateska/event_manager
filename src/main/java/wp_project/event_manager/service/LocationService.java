@@ -2,7 +2,11 @@ package wp_project.event_manager.service;
 
 import wp_project.event_manager.model.Location;
 
+import java.util.List;
+
 public interface LocationService {
+
+    List<Location> listAll();
 
     Location findById(Long id);
 
