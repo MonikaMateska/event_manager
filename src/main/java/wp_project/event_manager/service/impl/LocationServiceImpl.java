@@ -6,12 +6,19 @@ import wp_project.event_manager.model.exceptions.InvalidLocationIdException;
 import wp_project.event_manager.repository.LocationRepository;
 import wp_project.event_manager.service.LocationService;
 
+import java.util.List;
+
 @Service
 public class LocationServiceImpl implements LocationService {
     private final LocationRepository locationRepository;
 
     public LocationServiceImpl(LocationRepository locationRepository) {
         this.locationRepository = locationRepository;
+    }
+
+    @Override
+    public List<Location> listAll() {
+        return this.locationRepository.findAll();
     }
 
     @Override

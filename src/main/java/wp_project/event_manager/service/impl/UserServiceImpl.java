@@ -7,12 +7,19 @@ import wp_project.event_manager.model.exceptions.InvalidUserIdException;
 import wp_project.event_manager.repository.UserRepository;
 import wp_project.event_manager.service.UserService;
 
+import java.util.List;
+
 @Service
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
 
     public UserServiceImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
+    }
+
+    @Override
+    public List<User> listAll() {
+        return this.userRepository.findAll();
     }
 
     @Override
